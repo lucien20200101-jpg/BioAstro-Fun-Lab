@@ -1,0 +1,87 @@
+[
+  {
+    "id": "bio-concept-1",
+    "name": "酶的专一性",
+    "category": "生化",
+    "summary": "酶通常只催化特定底物或反应。",
+    "explanation": "活性位点的结构与化学环境决定了酶的选择性。",
+    "analogy": "像钥匙只开对应锁孔。",
+    "keywords": [
+      "酶",
+      "催化"
+    ],
+    "misconceptions": [
+      "所有酶都能催化所有反应"
+    ],
+    "extensionQuestion": "温度过高为什么会让酶失活？",
+    "enabled": true
+  },
+  {
+    "id": "bio-concept-2",
+    "name": "细胞膜流动镶嵌模型",
+    "category": "细胞",
+    "summary": "细胞膜由脂质双层与蛋白构成并保持流动性。",
+    "explanation": "膜蛋白可在膜平面移动，影响物质运输与信号传导。",
+    "analogy": "像漂浮着小船的湖面。",
+    "keywords": [
+      "细胞膜",
+      "流动性"
+    ],
+    "misconceptions": [
+      "细胞膜是完全刚性的"
+    ],
+    "extensionQuestion": "低温对膜流动性有何影响？",
+    "enabled": true
+  },
+  {
+    "id": "bio-concept-3",
+    "name": "负反馈调节",
+    "category": "生理",
+    "summary": "系统输出抑制自身变化，维持稳态。",
+    "explanation": "如血糖升高触发胰岛素分泌，随后降低血糖。",
+    "analogy": "空调根据室温自动调节。",
+    "keywords": [
+      "稳态",
+      "反馈"
+    ],
+    "misconceptions": [
+      "反馈一定会放大变化"
+    ],
+    "extensionQuestion": "体温调节中有哪些负反馈环节？",
+    "enabled": true
+  },
+  {
+    "id": "bio-concept-4",
+    "name": "自然选择",
+    "category": "进化",
+    "summary": "环境更有利的性状更可能被保留。",
+    "explanation": "选择作用于表型差异，长期会改变群体基因频率。",
+    "analogy": "考试规则改变后高分策略也改变。",
+    "keywords": [
+      "进化",
+      "适应"
+    ],
+    "misconceptions": [
+      "个体会主动进化出需要的性状"
+    ],
+    "extensionQuestion": "为什么进化不等于“越来越高级”？",
+    "enabled": true
+  },
+  {
+    "id": "bio-concept-5",
+    "name": "光合作用",
+    "category": "植物",
+    "summary": "植物利用光能合成有机物并释放氧气。",
+    "explanation": "叶绿体将光能转化为化学能，固定二氧化碳。",
+    "analogy": "把阳光“存”进糖分子。",
+    "keywords": [
+      "叶绿体",
+      "碳固定"
+    ],
+    "misconceptions": [
+      "植物只在白天呼吸"
+    ],
+    "extensionQuestion": "阴天时光合作用为何仍能进行？",
+    "enabled": true
+  }
+]

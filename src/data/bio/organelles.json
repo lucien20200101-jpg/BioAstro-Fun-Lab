@@ -1,0 +1,112 @@
+[
+  {
+    "id": "org-1",
+    "name": "细胞核",
+    "role": "指挥官",
+    "appearance": "深色圆顶控制舱",
+    "function": "储存遗传信息并调控基因表达",
+    "lines": [
+      "先看DNA蓝图再行动。"
+    ],
+    "events": [
+      "下达转录任务"
+    ],
+    "keywords": [
+      "DNA",
+      "调控"
+    ],
+    "description": "冷静的总控角色，重视秩序。",
+    "scienceExplanation": "细胞核通过转录调控蛋白表达时序。",
+    "quote": "有计划，才有生命节奏。",
+    "color": "#6C63FF",
+    "enabled": true
+  },
+  {
+    "id": "org-2",
+    "name": "线粒体",
+    "role": "能源主管",
+    "appearance": "橙色双层折叠能量舱",
+    "function": "进行有氧呼吸合成ATP",
+    "lines": [
+      "电量不足？我来供能。"
+    ],
+    "events": [
+      "提高细胞供能"
+    ],
+    "keywords": [
+      "ATP",
+      "呼吸作用"
+    ],
+    "description": "行动派，擅长把营养变成可用能量。",
+    "scienceExplanation": "线粒体内膜电子传递链是ATP主要来源。",
+    "quote": "能量在线，任务不断。",
+    "color": "#FF8A65",
+    "enabled": true
+  },
+  {
+    "id": "org-3",
+    "name": "核糖体",
+    "role": "蛋白工匠",
+    "appearance": "密集小颗粒工坊",
+    "function": "翻译mRNA并合成蛋白质",
+    "lines": [
+      "给我模板，我就开工。"
+    ],
+    "events": [
+      "快速组装蛋白"
+    ],
+    "keywords": [
+      "翻译",
+      "蛋白质"
+    ],
+    "description": "高效率制造者，重视准确拼装。",
+    "scienceExplanation": "核糖体按密码子顺序连接氨基酸。",
+    "quote": "细节正确，功能才可靠。",
+    "color": "#4DB6AC",
+    "enabled": true
+  },
+  {
+    "id": "org-4",
+    "name": "高尔基体",
+    "role": "包装与物流",
+    "appearance": "层叠扁平囊仓库",
+    "function": "修饰、分类并运输蛋白",
+    "lines": [
+      "贴好标签再发货。"
+    ],
+    "events": [
+      "分拣囊泡"
+    ],
+    "keywords": [
+      "分泌",
+      "修饰"
+    ],
+    "description": "组织能力强，擅长流程管理。",
+    "scienceExplanation": "高尔基体参与糖基化与分泌通路分选。",
+    "quote": "流程顺，效率高。",
+    "color": "#BA68C8",
+    "enabled": true
+  },
+  {
+    "id": "org-5",
+    "name": "溶酶体",
+    "role": "清洁队长",
+    "appearance": "酸性回收舱",
+    "function": "分解受损结构和大分子",
+    "lines": [
+      "旧件回收，空间腾出。"
+    ],
+    "events": [
+      "启动自噬协作"
+    ],
+    "keywords": [
+      "降解",
+      "自噬"
+    ],
+    "description": "守护环境整洁，防止垃圾堆积。",
+    "scienceExplanation": "溶酶体含水解酶，在酸性环境下活性较高。",
+    "quote": "会清理，才会持续生长。",
+    "color": "#42A5F5",
+    "enabled": true
+  }
+]

@@ -1,0 +1,139 @@
+[
+  {
+    "id": "pq-1",
+    "question": "周末你更想去哪里？",
+    "options": [
+      {
+        "label": "A",
+        "text": "热闹城市，节奏快",
+        "scores": {
+          "mercury": 2
+        }
+      },
+      {
+        "label": "B",
+        "text": "自然公园，平衡放松",
+        "scores": {
+          "earth": 2
+        }
+      },
+      {
+        "label": "C",
+        "text": "高海拔荒野，挑战自我",
+        "scores": {
+          "mars": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "pq-2",
+    "question": "你做决定时更看重？",
+    "options": [
+      {
+        "label": "A",
+        "text": "效率与速度",
+        "scores": {
+          "mercury": 2
+        }
+      },
+      {
+        "label": "B",
+        "text": "关系与氛围",
+        "scores": {
+          "venus": 2
+        }
+      },
+      {
+        "label": "C",
+        "text": "长期稳定与系统性",
+        "scores": {
+          "jupiter": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "pq-3",
+    "question": "团队中你像哪种角色？",
+    "options": [
+      {
+        "label": "A",
+        "text": "协调者",
+        "scores": {
+          "earth": 2
+        }
+      },
+      {
+        "label": "B",
+        "text": "开路先锋",
+        "scores": {
+          "mars": 2
+        }
+      },
+      {
+        "label": "C",
+        "text": "战略护航者",
+        "scores": {
+          "jupiter": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "pq-4",
+    "question": "遇到压力时你会？",
+    "options": [
+      {
+        "label": "A",
+        "text": "先独处消化",
+        "scores": {
+          "mercury": 1,
+          "mars": 1
+        }
+      },
+      {
+        "label": "B",
+        "text": "找人讨论",
+        "scores": {
+          "venus": 2
+        }
+      },
+      {
+        "label": "C",
+        "text": "梳理结构再行动",
+        "scores": {
+          "earth": 1,
+          "jupiter": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "pq-5",
+    "question": "你最欣赏的学习方式？",
+    "options": [
+      {
+        "label": "A",
+        "text": "密集短时训练",
+        "scores": {
+          "mercury": 2
+        }
+      },
+      {
+        "label": "B",
+        "text": "持续迭代复盘",
+        "scores": {
+          "earth": 2
+        }
+      },
+      {
+        "label": "C",
+        "text": "大胆试错探索",
+        "scores": {
+          "mars": 2
+        }
+      }
+    ]
+  }
+]

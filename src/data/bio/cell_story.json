@@ -1,0 +1,146 @@
+[
+  {
+    "id": "node-1",
+    "title": "清晨启动",
+    "description": "你是一个肝细胞，晨间葡萄糖输入上升。",
+    "status": "start",
+    "options": [
+      {
+        "text": "提高糖原合成",
+        "effects": [
+          "储能上升"
+        ],
+        "nextNodeId": "node-2",
+        "feedback": "稳健策略，先存后用。"
+      },
+      {
+        "text": "立即大量分解葡萄糖",
+        "effects": [
+          "ATP快速增加"
+        ],
+        "nextNodeId": "node-3",
+        "feedback": "短期供能快，但储备减少。"
+      }
+    ]
+  },
+  {
+    "id": "node-2",
+    "title": "物资分配",
+    "description": "蛋白合成需求增加。",
+    "status": "normal",
+    "options": [
+      {
+        "text": "调度更多核糖体",
+        "effects": [
+          "蛋白产能提升"
+        ],
+        "nextNodeId": "node-4",
+        "feedback": "制造线效率提升。"
+      },
+      {
+        "text": "优先修复受损蛋白",
+        "effects": [
+          "质量控制提升"
+        ],
+        "nextNodeId": "node-4",
+        "feedback": "先保质量再扩产。"
+      }
+    ]
+  },
+  {
+    "id": "node-3",
+    "title": "能量高峰",
+    "description": "线粒体负荷提高，活性氧略上升。",
+    "status": "challenge",
+    "options": [
+      {
+        "text": "启动抗氧化反应",
+        "effects": [
+          "氧化压力下降"
+        ],
+        "nextNodeId": "node-4",
+        "feedback": "风险控制及时。"
+      },
+      {
+        "text": "继续满负荷供能",
+        "effects": [
+          "短期效率提升"
+        ],
+        "nextNodeId": "node-5",
+        "feedback": "后续维护压力可能增加。"
+      }
+    ]
+  },
+  {
+    "id": "node-4",
+    "title": "午后稳态",
+    "description": "细胞进入稳态调控阶段。",
+    "status": "normal",
+    "options": [
+      {
+        "text": "维持负反馈监测",
+        "effects": [
+          "波动减小"
+        ],
+        "nextNodeId": "node-6",
+        "feedback": "系统更稳定。"
+      },
+      {
+        "text": "降低监测节省资源",
+        "effects": [
+          "调控灵敏度下降"
+        ],
+        "nextNodeId": "node-5",
+        "feedback": "省资源但风险变大。"
+      }
+    ]
+  },
+  {
+    "id": "node-5",
+    "title": "压力警报",
+    "description": "代谢副产物积累，需快速处理。",
+    "status": "challenge",
+    "options": [
+      {
+        "text": "增强溶酶体回收",
+        "effects": [
+          "垃圾减少"
+        ],
+        "nextNodeId": "node-6",
+        "feedback": "清理有效，恢复可期。"
+      },
+      {
+        "text": "暂时忽略清理",
+        "effects": [
+          "损伤累积"
+        ],
+        "nextNodeId": "node-6",
+        "feedback": "可能影响后续功能。"
+      }
+    ]
+  },
+  {
+    "id": "node-6",
+    "title": "夜间收尾",
+    "description": "一天结束，细胞准备进入低负荷维护。",
+    "status": "ending",
+    "options": [
+      {
+        "text": "记录关键状态并休整",
+        "effects": [
+          "次日响应更快"
+        ],
+        "nextNodeId": "node-6",
+        "feedback": "良好收尾有助长期稳定。"
+      },
+      {
+        "text": "维持常规水平",
+        "effects": [
+          "状态平稳"
+        ],
+        "nextNodeId": "node-6",
+        "feedback": "稳态维持完成。"
+      }
+    ]
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "scenario-1",
+    "name": "地下海洋化学合成",
+    "category": "icy moon",
+    "summary": "冰壳下海洋可能以化学能驱动生态。",
+    "explanation": "若存在热液活动，可能形成类似地球深海喷口的能量梯度。",
+    "analogy": "黑暗中的“化学电站”。",
+    "keywords": [
+      "欧罗巴",
+      "土卫二"
+    ],
+    "misconceptions": [
+      "没有阳光就绝不可能有生命"
+    ],
+    "extensionQuestion": "哪些分子可作为化学能代谢线索？",
+    "enabled": true
+  },
+  {
+    "id": "scenario-2",
+    "name": "火星地下微生物避难所",
+    "category": "rocky planet",
+    "summary": "地下环境可能比表面更能屏蔽辐射。",
+    "explanation": "若有盐水薄层和矿物能量来源，微生物生境有待探测。",
+    "analogy": "躲在岩层下的微型温室。",
+    "keywords": [
+      "火星",
+      "地下"
+    ],
+    "misconceptions": [
+      "火星表面无绿植就代表绝无生命"
+    ],
+    "extensionQuestion": "钻探深度为何关键？",
+    "enabled": true
+  },
+  {
+    "id": "scenario-3",
+    "name": "泰坦低温有机化学路径",
+    "category": "hydrocarbon world",
+    "summary": "泰坦可能支持不同于地球水体系的化学网络。",
+    "explanation": "在极低温甲烷环境中，复杂有机反应仍可能发生。",
+    "analogy": "超低温化学实验室。",
+    "keywords": [
+      "泰坦",
+      "甲烷湖"
+    ],
+    "misconceptions": [
+      "生命必须与地球完全同配方"
+    ],
+    "extensionQuestion": "如何区分生物信号与非生物化学？",
+    "enabled": true
+  },
+  {
+    "id": "scenario-4",
+    "name": "系外行星大气生物标志气体",
+    "category": "exoplanet",
+    "summary": "通过光谱寻找异常气体组合线索。",
+    "explanation": "甲烷与氧气共存等信号可能提示非平衡过程，但需排除地质机制。",
+    "analogy": "远距离闻“化学气味”。",
+    "keywords": [
+      "光谱",
+      "生物标志"
+    ],
+    "misconceptions": [
+      "检测到一种气体就能确认生命"
+    ],
+    "extensionQuestion": "为什么需要多气体联合判断？",
+    "enabled": true
+  },
+  {
+    "id": "scenario-5",
+    "name": "潮汐锁定行星暮光带生态",
+    "category": "exoplanet",
+    "summary": "潮汐锁定行星可能在昼夜交界处存在温和区域。",
+    "explanation": "大气与海洋环流可能缓解极端温差，具体取决于行星参数。",
+    "analogy": "永恒白天与黑夜之间的“边界城”。",
+    "keywords": [
+      "潮汐锁定",
+      "宜居带"
+    ],
+    "misconceptions": [
+      "潮汐锁定必然不宜居"
+    ],
+    "extensionQuestion": "哪些观测可检验环流模型？",
+    "enabled": true
+  }
+]

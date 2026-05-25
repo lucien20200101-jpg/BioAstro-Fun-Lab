@@ -1,0 +1,52 @@
+[
+  {
+    "id": "scale-1",
+    "name": "DNA双螺旋直径",
+    "scaleMeter": 2e-09,
+    "displayScale": "2 nm",
+    "category": "biology",
+    "summary": "遗传分子的微观尺度。",
+    "detail": "DNA双链直径约2纳米，远小于可见光波长。",
+    "enabled": true
+  },
+  {
+    "id": "scale-2",
+    "name": "典型细胞直径",
+    "scaleMeter": 2e-05,
+    "displayScale": "20 μm",
+    "category": "biology",
+    "summary": "动物细胞常见大小量级。",
+    "detail": "大多数真核细胞在10到100微米范围内。",
+    "enabled": true
+  },
+  {
+    "id": "scale-3",
+    "name": "人类身高",
+    "scaleMeter": 1.7,
+    "displayScale": "1.7 m",
+    "category": "human",
+    "summary": "人体尺度参考。",
+    "detail": "用于连接微观生物与宏观天文的过渡量级。",
+    "enabled": true
+  },
+  {
+    "id": "scale-4",
+    "name": "地球直径",
+    "scaleMeter": 12742000.0,
+    "displayScale": "12,742 km",
+    "category": "planet",
+    "summary": "地球的典型行星尺度。",
+    "detail": "地球平均直径约1.27万千米。",
+    "enabled": true
+  },
+  {
+    "id": "scale-5",
+    "name": "日地平均距离",
+    "scaleMeter": 149600000000.0,
+    "displayScale": "1 AU",
+    "category": "astronomy",
+    "summary": "太阳系常用距离单位。",
+    "detail": "1天文单位是地球到太阳平均距离的近似值。",
+    "enabled": true
+  }
+]
