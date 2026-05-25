@@ -1,22 +1,31 @@
+import { useState } from 'react';
+import { ContentManager } from '../components/admin/ContentManager';
+import { DatasetSwitcher } from '../components/admin/DatasetSwitcher';
+import { JsonImportExport } from '../components/admin/JsonImportExport';
 import { Card } from '../components/ui/Card';
-import { datasetKeys } from '../lib/datasetRegistry';
-import { useLocalDataset } from '../hooks/useLocalDataset';
+import { datasetKeys, getDatasetMeta } from '../lib/datasetRegistry';
+import type { DatasetKey } from '../types/dataset';
 
 export function AdminPage() {
-  const { data, isUsingLocalData, error } = useLocalDataset('bio.facts');
+  const [selectedKey, setSelectedKey] = useState<DatasetKey>('bio.facts');
+  const [reloadTick, setReloadTick] = useState(0);
 
   return (
-    <Card>
-      <h2 className="mb-2 text-lg font-semibold">管理中心</h2>
-      <p className="text-sm text-slate-300">用于后续提供本地 JSON 数据导入、导出、恢复默认等能力。</p>
-      <p className="mt-2 text-sm text-cosmic-bioGreen">当前状态：开发中</p>
-
-      <div className="mt-4 rounded-md border border-slate-700 bg-slate-900/60 p-3 text-xs text-slate-200">
-        <p>数据集总数：{datasetKeys.length}</p>
-        <p>示例数据集（bio.facts）条目数：{data.length}</p>
-        <p>示例数据来源：{isUsingLocalData ? 'localStorage' : '默认 JSON'}</p>
-        {error ? <p className="mt-1 text-rose-300">读取错误：{error}</p> : null}
+    <div className="grid gap-4 lg:grid-cols-[320px_1fr]">
+      <Card>
+        <h2 className="mb-3 text-lg font-semibold">内容管理中心</h2>
+        <DatasetSwitcher datasetKeys={datasetKeys} selectedKey={selectedKey} onSelect={setSelectedKey} getMeta={getDatasetMeta} />
+      </Card>
+      <div className="space-y-4">
+        <Card>
+          <h3 className="mb-2 text-base font-semibold">数据内容管理：{getDatasetMeta(selectedKey).label}</h3>
+          <ContentManager key={`${selectedKey}-${reloadTick}`} datasetKey={selectedKey} />
+        </Card>
+        <Card>
+          <h3 className="mb-2 text-base font-semibold">JSON 导入 / 导出</h3>
+          <JsonImportExport datasetKey={selectedKey} onImported={() => setReloadTick((v) => v + 1)} />
+        </Card>
       </div>
-    </Card>
+    </div>
   );
 }
