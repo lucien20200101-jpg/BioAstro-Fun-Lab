@@ -3,7 +3,7 @@ import type { ToolEntry } from '../types/tool';
 export const toolEntries: ToolEntry[] = [
   { id: 'bio-trivia-box', title: '生物冷知识盲盒', description: '随机探索一条有趣的生物知识。', category: 'bio', path: '/bio/random-facts' },
   { id: 'cell-organelle-type', title: '今天你是哪种细胞器', description: '用轻问答匹配你的细胞器人格。', category: 'bio', path: '/bio/organelle-quiz' },
-  { id: 'dna-translator', title: 'DNA 密码翻译器', description: '查看 DNA 与蛋白质编码的可视化入口。', category: 'bio', path: '/tools/dna-translator' },
+  { id: 'dna-translator', title: 'DNA 密码翻译器', description: '查看 DNA 与蛋白质编码的可视化入口。', category: 'bio', path: '/bio/dna-translator' },
   { id: 'bio-card-generator', title: '生物概念卡片生成器', description: '将生物概念转为结构化记忆卡片。', category: 'bio', path: '/tools/bio-card-generator' },
   { id: 'organelle-theater', title: '细胞器拟人化小剧场', description: '细胞器角色剧情入口（开发中）。', category: 'bio', path: '/tools/organelle-theater' },
   { id: 'cell-day-story', title: '一个细胞的一天', description: '以时间线方式浏览细胞活动。', category: 'bio', path: '/tools/cell-day-story' },
