@@ -7,22 +7,22 @@
         "label": "A",
         "text": "建立流程并分配任务",
         "scores": {
-          "nucleus": 2,
-          "golgi": 1
+          "org-1": 2,
+          "org-4": 1
         }
       },
       {
         "label": "B",
         "text": "先给大家补充能量和资源",
         "scores": {
-          "mitochondria": 2
+          "org-2": 2
         }
       },
       {
         "label": "C",
         "text": "马上动手把东西做出来",
         "scores": {
-          "ribosome": 2
+          "org-3": 2
         }
       }
     ]
@@ -35,21 +35,21 @@
         "label": "A",
         "text": "长期规划，稳步推进",
         "scores": {
-          "nucleus": 2
+          "org-1": 2
         }
       },
       {
         "label": "B",
         "text": "高负荷冲刺，快速供能",
         "scores": {
-          "mitochondria": 2
+          "org-2": 2
         }
       },
       {
         "label": "C",
         "text": "边做边修，保证质量",
         "scores": {
-          "lysosome": 2
+          "org-5": 2
         }
       }
     ]
@@ -62,22 +62,22 @@
         "label": "A",
         "text": "信息是否完整",
         "scores": {
-          "nucleus": 1,
-          "ribosome": 1
+          "org-1": 1,
+          "org-3": 1
         }
       },
       {
         "label": "B",
         "text": "物资运输是否顺畅",
         "scores": {
-          "golgi": 2
+          "org-4": 2
         }
       },
       {
         "label": "C",
         "text": "是否有回收和维护计划",
         "scores": {
-          "lysosome": 2
+          "org-5": 2
         }
       }
     ]
@@ -90,22 +90,22 @@
         "label": "A",
         "text": "你很会统筹全局",
         "scores": {
-          "nucleus": 2
+          "org-1": 2
         }
       },
       {
         "label": "B",
         "text": "你总能把事做完",
         "scores": {
-          "ribosome": 2
+          "org-3": 2
         }
       },
       {
         "label": "C",
         "text": "你擅长幕后支援",
         "scores": {
-          "mitochondria": 1,
-          "golgi": 1
+          "org-2": 1,
+          "org-4": 1
         }
       }
     ]
@@ -118,22 +118,22 @@
         "label": "A",
         "text": "先清理冗余再恢复",
         "scores": {
-          "lysosome": 2
+          "org-5": 2
         }
       },
       {
         "label": "B",
         "text": "提升供能顶住高峰",
         "scores": {
-          "mitochondria": 2
+          "org-2": 2
         }
       },
       {
         "label": "C",
         "text": "重新安排任务优先级",
         "scores": {
-          "nucleus": 1,
-          "golgi": 1
+          "org-1": 1,
+          "org-4": 1
         }
       }
     ]
