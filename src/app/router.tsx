@@ -4,6 +4,7 @@ import { AdminPage } from '../pages/AdminPage';
 import { AstroPage } from '../pages/AstroPage';
 import { BioAstroPage } from '../pages/BioAstroPage';
 import { BioPage } from '../pages/BioPage';
+import { DNATranslatorPage } from '../pages/DNATranslatorPage';
 import { HomePage } from '../pages/HomePage';
 import { PlaceholderPage } from '../pages/PlaceholderPage';
 import { RandomBoxPage } from '../pages/RandomBoxPage';
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
   { path: '/astro/random-facts', element: <AppShell><RandomBoxPage /></AppShell> },
   { path: '/bioastro', element: <AppShell><BioAstroPage /></AppShell> },
   { path: '/bio/organelle-quiz', element: <AppShell><QuizPage /></AppShell> },
+  { path: '/bio/dna-translator', element: <AppShell><DNATranslatorPage /></AppShell> },
   { path: '/astro/planet-quiz', element: <AppShell><QuizPage /></AppShell> },
   { path: '/admin', element: <AppShell><AdminPage /></AppShell> },
   ...toolRoutes.map((route) => ({ path: route.path, element: <AppShell>{route.element}</AppShell> })),
