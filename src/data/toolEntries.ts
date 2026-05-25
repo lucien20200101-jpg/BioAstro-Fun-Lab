@@ -13,6 +13,6 @@ export const toolEntries: ToolEntry[] = [
   { id: 'constellation-card', title: '星座故事卡片生成器', description: '把星座故事生成为卡片模板。', category: 'astro', path: '/tools/constellation-card' },
   { id: 'cosmic-scale-ruler', title: '宇宙尺度滑尺', description: '以尺度滑动查看宇宙层级。', category: 'astro', path: '/tools/cosmic-scale-ruler' },
 
-  { id: 'habitability-scorer', title: '星球宜居性评分器', description: '基于参数展示宜居性评分框架。', category: 'bioastro', path: '/tools/habitability-scorer' },
+  { id: 'habitability-scorer', title: '星球宜居性评分器', description: '基于参数展示宜居性评分框架。', category: 'bioastro', path: '/bioastro/habitability' },
   { id: 'alien-life-finder', title: '外星生命可能在哪里', description: '探索潜在生命环境的资料入口。', category: 'bioastro', path: '/tools/alien-life-finder' },
 ];
