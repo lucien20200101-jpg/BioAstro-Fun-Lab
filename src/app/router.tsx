@@ -12,7 +12,23 @@ import { RandomBoxPage } from '../pages/RandomBoxPage';
 import { QuizPage } from '../pages/QuizPage';
 import { toolEntries } from '../data/toolEntries';
 
-const toolRoutes = toolEntries.map((tool) => ({ path: tool.path, element: <PlaceholderPage /> }));
+const implementedPaths = new Set([
+  '/',
+  '/bio',
+  '/astro',
+  '/bioastro',
+  '/admin',
+  '/bio/random-facts',
+  '/astro/random-facts',
+  '/bio/organelle-quiz',
+  '/astro/planet-quiz',
+  '/bio/dna-translator',
+  '/bioastro/habitability',
+]);
+
+const toolRoutes = toolEntries
+  .filter((tool) => !implementedPaths.has(tool.path))
+  .map((tool) => ({ path: tool.path, element: <PlaceholderPage /> }));
 
 export const router = createBrowserRouter([
   {
