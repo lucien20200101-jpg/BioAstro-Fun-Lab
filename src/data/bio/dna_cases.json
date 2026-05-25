@@ -1,0 +1,152 @@
+[
+  {
+    "id": "dna-1",
+    "name": "乳糖耐受线索",
+    "dnaSequence": "ATGCGTACCTTGA",
+    "description": "比较与乳糖代谢相关位点的变体示例。",
+    "knowledgePoints": [
+      "基因表达调控",
+      "人群差异"
+    ],
+    "mutations": [
+      {
+        "id": "m1",
+        "from": "C",
+        "to": "T",
+        "impact": "可能影响调控强度"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "该变体一定导致乳糖耐受吗？",
+        "hint": "考虑环境与多基因影响。",
+        "expectedKeywords": [
+          "不一定",
+          "多因素"
+        ]
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dna-2",
+    "name": "高海拔适应片段",
+    "dnaSequence": "GGATTCGGAACCA",
+    "description": "模拟与低氧适应相关的片段分析。",
+    "knowledgePoints": [
+      "适应",
+      "基因-环境互作"
+    ],
+    "mutations": [
+      {
+        "id": "m1",
+        "from": "A",
+        "to": "G",
+        "impact": "可能影响氧运输调节"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "为什么同一变体在人群中表现不同？",
+        "hint": "考虑生活环境差异。",
+        "expectedKeywords": [
+          "环境",
+          "表型"
+        ]
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dna-3",
+    "name": "色觉相关位点",
+    "dnaSequence": "TTACCGGATAGCT",
+    "description": "用于讨论色觉相关蛋白变体。",
+    "knowledgePoints": [
+      "蛋白功能",
+      "遗传多样性"
+    ],
+    "mutations": [
+      {
+        "id": "m1",
+        "from": "G",
+        "to": "A",
+        "impact": "可能改变氨基酸性质"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "突变后蛋白一定失效吗？",
+        "hint": "看替换位置与性质。",
+        "expectedKeywords": [
+          "不一定",
+          "结构"
+        ]
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dna-4",
+    "name": "抗病基因片段",
+    "dnaSequence": "CCGTAATGGCCTA",
+    "description": "模拟植物抗病相关位点比对。",
+    "knowledgePoints": [
+      "等位基因",
+      "选择育种"
+    ],
+    "mutations": [
+      {
+        "id": "m1",
+        "from": "T",
+        "to": "C",
+        "impact": "可能提升识别效率"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "为何要结合田间试验验证？",
+        "hint": "基因型不等于稳定产量。",
+        "expectedKeywords": [
+          "表型验证",
+          "环境"
+        ]
+      }
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dna-5",
+    "name": "药物代谢位点",
+    "dnaSequence": "AAGTCCGTTAGGA",
+    "description": "展示药物代谢酶相关位点的教育案例。",
+    "knowledgePoints": [
+      "个体化医疗",
+      "酶活性差异"
+    ],
+    "mutations": [
+      {
+        "id": "m1",
+        "from": "C",
+        "to": "A",
+        "impact": "可能改变代谢速度"
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "为什么用药方案不能只看一个位点？",
+        "hint": "考虑多基因与生理状态。",
+        "expectedKeywords": [
+          "多基因",
+          "综合判断"
+        ]
+      }
+    ],
+    "enabled": true
+  }
+]

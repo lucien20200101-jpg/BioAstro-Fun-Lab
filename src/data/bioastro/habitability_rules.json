@@ -1,0 +1,42 @@
+[
+  {
+    "id": "rule-1",
+    "factor": "液态水",
+    "condition": "存在长期稳定液态水证据",
+    "score": 25,
+    "explanation": "液态水被认为是已知生命化学的重要介质。",
+    "enabled": true
+  },
+  {
+    "id": "rule-2",
+    "factor": "能量来源",
+    "condition": "存在恒定能量梯度，如恒星辐照或化学能",
+    "score": 20,
+    "explanation": "生命活动可能依赖可持续能量输入。",
+    "enabled": true
+  },
+  {
+    "id": "rule-3",
+    "factor": "有机分子",
+    "condition": "探测到碳基有机分子或前体",
+    "score": 20,
+    "explanation": "有机分子可作为生命化学的候选基础。",
+    "enabled": true
+  },
+  {
+    "id": "rule-4",
+    "factor": "大气与屏蔽",
+    "condition": "存在可提供一定屏蔽的大气或磁场条件",
+    "score": 15,
+    "explanation": "适度屏蔽可能降低高能辐射对复杂分子的破坏。",
+    "enabled": true
+  },
+  {
+    "id": "rule-5",
+    "factor": "环境稳定性",
+    "condition": "关键环境参数在较长时期内波动可控",
+    "score": 20,
+    "explanation": "长期稳定环境更利于复杂化学过程累积。",
+    "enabled": true
+  }
+]

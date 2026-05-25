@@ -1,0 +1,72 @@
+[
+  {
+    "id": "bio-fact-1",
+    "title": "肠道细菌会“发短信”",
+    "category": "微生物",
+    "summary": "肠道菌群能通过代谢物影响神经系统。",
+    "detail": "一些细菌代谢产物可能通过肠-脑轴影响情绪与食欲，但机制仍在研究。",
+    "keywords": [
+      "肠脑轴",
+      "菌群"
+    ],
+    "question": "为什么饮食变化会影响情绪？",
+    "difficulty": "easy",
+    "enabled": true
+  },
+  {
+    "id": "bio-fact-2",
+    "title": "骨骼并非静止结构",
+    "category": "人体",
+    "summary": "骨组织持续被破骨细胞和成骨细胞重塑。",
+    "detail": "成年人体骨骼仍在缓慢更新，运动与营养会影响重塑速度。",
+    "keywords": [
+      "骨重塑",
+      "成骨细胞"
+    ],
+    "question": "久坐为什么不利于骨骼健康？",
+    "difficulty": "easy",
+    "enabled": true
+  },
+  {
+    "id": "bio-fact-3",
+    "title": "植物也会“求救”",
+    "category": "植物",
+    "summary": "受伤植物可释放挥发物吸引天敌捕食害虫。",
+    "detail": "部分植物在被啃食后会释放化学信号，周围植物也可能提前启动防御。",
+    "keywords": [
+      "植物信号",
+      "防御"
+    ],
+    "question": "植物之间能否“交流”？",
+    "difficulty": "medium",
+    "enabled": true
+  },
+  {
+    "id": "bio-fact-4",
+    "title": "线粒体有自己的DNA",
+    "category": "细胞",
+    "summary": "线粒体DNA与核DNA分开遗传。",
+    "detail": "线粒体DNA通常以母系为主传递，是研究人类迁徙的重要线索之一。",
+    "keywords": [
+      "线粒体",
+      "遗传"
+    ],
+    "question": "为什么线粒体常用于谱系研究？",
+    "difficulty": "medium",
+    "enabled": true
+  },
+  {
+    "id": "bio-fact-5",
+    "title": "章鱼有分布式“决策”能力",
+    "category": "动物",
+    "summary": "章鱼神经系统有大量神经元分布在腕部。",
+    "detail": "章鱼腕部可执行复杂动作，体现出高效的分布式神经控制。",
+    "keywords": [
+      "章鱼",
+      "神经系统"
+    ],
+    "question": "分布式控制有什么优势？",
+    "difficulty": "hard",
+    "enabled": true
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "const-1",
+    "name": "Orion",
+    "category": "winter sky",
+    "summary": "冬季夜空中醒目的星座之一。",
+    "explanation": "亮星分布形成“猎户”轮廓，便于入门观测。",
+    "analogy": "夜空中的坐标路标。",
+    "keywords": [
+      "猎户座",
+      "参宿"
+    ],
+    "misconceptions": [
+      "星座内恒星彼此距离很近"
+    ],
+    "extensionQuestion": "为什么星座形状会随地点和季节变化？",
+    "enabled": true
+  },
+  {
+    "id": "const-2",
+    "name": "Ursa Major",
+    "category": "northern sky",
+    "summary": "北斗七星位于大熊座范围内。",
+    "explanation": "可用斗口连线寻找北极星方向。",
+    "analogy": "古代夜航指南针。",
+    "keywords": [
+      "大熊座",
+      "北斗七星"
+    ],
+    "misconceptions": [
+      "北斗七星就是一个完整独立星座"
+    ],
+    "extensionQuestion": "如何利用北斗星辅助定向？",
+    "enabled": true
+  },
+  {
+    "id": "const-3",
+    "name": "Scorpius",
+    "category": "summer sky",
+    "summary": "夏季南方天空常见星座。",
+    "explanation": "心宿二颜色偏红，观感突出。",
+    "analogy": "天幕上的弯钩图案。",
+    "keywords": [
+      "天蝎座",
+      "心宿二"
+    ],
+    "misconceptions": [
+      "红色恒星都处在同一演化阶段"
+    ],
+    "extensionQuestion": "恒星颜色与温度有何关系？",
+    "enabled": true
+  },
+  {
+    "id": "const-4",
+    "name": "Cygnus",
+    "category": "summer triangle",
+    "summary": "天津四位于天鹅座，是夏季大三角一角。",
+    "explanation": "沿银河可较容易找到其十字形轮廓。",
+    "analogy": "穿过银河的飞鸟。",
+    "keywords": [
+      "天鹅座",
+      "天津四"
+    ],
+    "misconceptions": [
+      "星座边界在天空中有实体线"
+    ],
+    "extensionQuestion": "国际天文学联合会如何定义星座边界？",
+    "enabled": true
+  },
+  {
+    "id": "const-5",
+    "name": "Cassiopeia",
+    "category": "circumpolar",
+    "summary": "呈W形，北天常见。",
+    "explanation": "在部分纬度可与北斗形成季节互补定位。",
+    "analogy": "夜空中的字母标记。",
+    "keywords": [
+      "仙后座",
+      "W形"
+    ],
+    "misconceptions": [
+      "仙后座全年都在同一高度"
+    ],
+    "extensionQuestion": "地球自转如何影响星座视运动？",
+    "enabled": true
+  }
+]

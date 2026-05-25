@@ -1,0 +1,72 @@
+[
+  {
+    "id": "astro-f1",
+    "title": "金星一天比一年长",
+    "category": "行星",
+    "summary": "金星自转非常慢，且方向特殊。",
+    "detail": "金星自转周期约243地球日，公转约225地球日，因此“白天”很长。",
+    "keywords": [
+      "金星",
+      "自转"
+    ],
+    "question": "为何金星自转如此特殊仍在研究中？",
+    "difficulty": "easy",
+    "enabled": true
+  },
+  {
+    "id": "astro-f2",
+    "title": "木星有巨型风暴",
+    "category": "行星",
+    "summary": "大红斑是持续多年的高压风暴。",
+    "detail": "大红斑规模曾远超地球，但尺寸随时间变化，成因与演化仍在研究。",
+    "keywords": [
+      "木星",
+      "大红斑"
+    ],
+    "question": "为什么木星风暴能持续这么久？",
+    "difficulty": "medium",
+    "enabled": true
+  },
+  {
+    "id": "astro-f3",
+    "title": "中子星密度惊人",
+    "category": "恒星",
+    "summary": "一茶匙中子星物质质量可达巨大量级。",
+    "detail": "这是理论估算量级描述，用于科普其极端致密状态。",
+    "keywords": [
+      "中子星",
+      "致密天体"
+    ],
+    "question": "中子星如何形成？",
+    "difficulty": "medium",
+    "enabled": true
+  },
+  {
+    "id": "astro-f4",
+    "title": "土星并非唯一有环",
+    "category": "行星",
+    "summary": "木星、天王星、海王星也有行星环。",
+    "detail": "只是土星环更亮更显著，观测上更易被注意。",
+    "keywords": [
+      "土星环",
+      "行星环"
+    ],
+    "question": "为什么土星环最醒目？",
+    "difficulty": "easy",
+    "enabled": true
+  },
+  {
+    "id": "astro-f5",
+    "title": "系外行星持续增加",
+    "category": "系外行星",
+    "summary": "已确认系外行星数量不断更新。",
+    "detail": "新发现依赖凌星、径向速度等方法，具体数量需以最新数据库为准。",
+    "keywords": [
+      "系外行星",
+      "探测"
+    ],
+    "question": "为何要用多种方法交叉验证？",
+    "difficulty": "hard",
+    "enabled": true
+  }
+]

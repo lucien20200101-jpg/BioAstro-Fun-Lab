@@ -1,0 +1,107 @@
+[
+  {
+    "id": "world-1",
+    "name": "Mars",
+    "system": "Solar System",
+    "worldType": "rocky planet",
+    "environmentType": "cold arid",
+    "water": "存在极区冰与古水活动证据",
+    "energy": "太阳辐射与地化能可能并存",
+    "organics": "已发现有机分子线索",
+    "atmosphere": "稀薄二氧化碳大气",
+    "radiation": "表面辐射较高",
+    "stability": "当前表面环境偏严苛",
+    "risks": [
+      "低压",
+      "强辐射"
+    ],
+    "possibleLife": "若存在生命，可能偏向地下微生物生态位。",
+    "detectionAdvice": "优先钻探地下样本并防止地球污染。",
+    "lifePotentialScore": 56,
+    "enabled": true
+  },
+  {
+    "id": "world-2",
+    "name": "Europa",
+    "system": "Jupiter",
+    "worldType": "icy moon",
+    "environmentType": "subsurface ocean candidate",
+    "water": "冰壳下可能存在全球海洋",
+    "energy": "潮汐加热可能提供能量",
+    "organics": "有待进一步原位测定",
+    "atmosphere": "极稀薄外逸层",
+    "radiation": "木星磁层辐射强",
+    "stability": "海洋环境稳定性有待探测",
+    "risks": [
+      "辐射",
+      "厚冰壳"
+    ],
+    "possibleLife": "可能存在依赖化学能的微生物样生命。",
+    "detectionAdvice": "关注羽流采样与海洋化学指标。",
+    "lifePotentialScore": 72,
+    "enabled": true
+  },
+  {
+    "id": "world-3",
+    "name": "Enceladus",
+    "system": "Saturn",
+    "worldType": "icy moon",
+    "environmentType": "active plume world",
+    "water": "喷流显示液态水线索",
+    "energy": "潮汐与热液过程可能供能",
+    "organics": "喷流中检测到有机分子",
+    "atmosphere": "极稀薄",
+    "radiation": "相对木星系较低但仍需评估",
+    "stability": "内部海洋可能阶段性稳定",
+    "risks": [
+      "样本量有限",
+      "时变喷流"
+    ],
+    "possibleLife": "推测可能存在海底化学合成生态。",
+    "detectionAdvice": "持续多次羽流飞掠以提高统计可靠性。",
+    "lifePotentialScore": 78,
+    "enabled": true
+  },
+  {
+    "id": "world-4",
+    "name": "Titan",
+    "system": "Saturn",
+    "worldType": "icy moon",
+    "environmentType": "hydrocarbon-rich",
+    "water": "地表主要是甲烷乙烷循环，水以冰形态存在",
+    "energy": "太阳辐射弱，化学能可能重要",
+    "organics": "有丰富复杂有机化学",
+    "atmosphere": "浓厚含氮大气",
+    "radiation": "大气可提供一定屏蔽",
+    "stability": "气候循环相对稳定",
+    "risks": [
+      "低温",
+      "水活度低"
+    ],
+    "possibleLife": "可能存在与地球不同溶剂体系的生命化学候选。",
+    "detectionAdvice": "关注湖泊化学与表面-大气反应产物。",
+    "lifePotentialScore": 64,
+    "enabled": true
+  },
+  {
+    "id": "world-5",
+    "name": "K2-18 b",
+    "system": "K2-18",
+    "worldType": "sub-neptune candidate",
+    "environmentType": "temperate candidate",
+    "water": "大气中有水蒸气报告但仍待确认",
+    "energy": "接收母星辐照适中区间的可能性被讨论",
+    "organics": "部分分子信号存在争议",
+    "atmosphere": "可能较厚",
+    "radiation": "受恒星活动影响需评估",
+    "stability": "长期气候模型存在不确定性",
+    "risks": [
+      "观测信噪比限制",
+      "模型退化"
+    ],
+    "possibleLife": "关于宜居性仅能谨慎推测，需更多观测验证。",
+    "detectionAdvice": "使用多波段重复观测与独立模型交叉分析。",
+    "lifePotentialScore": 49,
+    "enabled": true
+  }
+]

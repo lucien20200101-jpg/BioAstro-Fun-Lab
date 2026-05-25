@@ -1,0 +1,87 @@
+[
+  {
+    "id": "planet-1",
+    "name": "Mercury",
+    "category": "terrestrial",
+    "summary": "太阳系最内侧行星，昼夜温差很大。",
+    "explanation": "大气极稀薄，难以保持热量。",
+    "analogy": "像一块白天暴晒、夜晚速冷的岩石。",
+    "keywords": [
+      "水星",
+      "温差"
+    ],
+    "misconceptions": [
+      "离太阳近就一定最热"
+    ],
+    "extensionQuestion": "为什么金星比水星更热？",
+    "enabled": true
+  },
+  {
+    "id": "planet-2",
+    "name": "Venus",
+    "category": "terrestrial",
+    "summary": "厚大气导致强温室效应。",
+    "explanation": "二氧化碳主导大气使表面极热。",
+    "analogy": "像一个持续升温的高压锅。",
+    "keywords": [
+      "金星",
+      "温室效应"
+    ],
+    "misconceptions": [
+      "金星适合人类直接居住"
+    ],
+    "extensionQuestion": "温室效应和可居住性有什么关系？",
+    "enabled": true
+  },
+  {
+    "id": "planet-3",
+    "name": "Earth",
+    "category": "terrestrial",
+    "summary": "目前已知存在稳定地表生命的行星。",
+    "explanation": "液态水、磁场与大气共同支持复杂生态。",
+    "analogy": "多系统协作的生态飞船。",
+    "keywords": [
+      "地球",
+      "液态水"
+    ],
+    "misconceptions": [
+      "地球环境永远稳定"
+    ],
+    "extensionQuestion": "哪些因素可能打破生态平衡？",
+    "enabled": true
+  },
+  {
+    "id": "planet-4",
+    "name": "Mars",
+    "category": "terrestrial",
+    "summary": "曾有液态水活动证据的冷干行星。",
+    "explanation": "轨道器与车载探测发现古河道和矿物线索。",
+    "analogy": "像冻结的旧河谷。",
+    "keywords": [
+      "火星",
+      "古水"
+    ],
+    "misconceptions": [
+      "火星当前表面普遍有液态海洋"
+    ],
+    "extensionQuestion": "未来火星生命探测要关注什么？",
+    "enabled": true
+  },
+  {
+    "id": "planet-5",
+    "name": "Jupiter",
+    "category": "gas giant",
+    "summary": "太阳系最大行星，磁场强。",
+    "explanation": "巨大的质量塑造强重力与复杂卫星系统。",
+    "analogy": "像太阳系中的“引力枢纽”。",
+    "keywords": [
+      "木星",
+      "气态巨行星"
+    ],
+    "misconceptions": [
+      "木星是固体表面可着陆"
+    ],
+    "extensionQuestion": "木星如何影响小天体轨道？",
+    "enabled": true
+  }
+]
