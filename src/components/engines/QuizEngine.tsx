@@ -166,34 +166,52 @@ export function QuizEngine({ questionDatasetKey, resultDatasetKey, title, subtit
 
       {!started ? (
         <Card className={`border ${accent.border} ${accent.glow} bg-slate-900/70 animate-fadeIn`}>
-          <p className="text-sm text-slate-200">共 {total} 题，完成后将匹配你的{resultType}类型。</p>
+          <div className="rounded-xl border border-dashed border-slate-600/80 bg-slate-950/50 p-4">
+            <p className="text-xs uppercase tracking-[0.24em] text-slate-400">扫描启动面板</p>
+            <h2 className="mt-2 text-xl font-semibold text-white">准备激活 {resultType} 信号扫描</h2>
+            <p className="mt-2 text-sm text-slate-200">共 {total} 题，完成后将匹配你的{resultType}类型。</p>
+          </div>
           <div className="mt-4 flex flex-wrap gap-2">
             <Button className={accent.button} onClick={startQuiz}>开始测试</Button>
           </div>
         </Card>
       ) : completed && scoreResult ? (
         <Card className={`border ${accent.border} ${accent.glow} bg-slate-900/70 animate-fadeIn`}>
-          <div className="space-y-3">
-            <span className={`inline-flex rounded-full px-3 py-1 text-xs ${accent.tag}`}>测试结果</span>
-            <h2 className="text-2xl font-semibold text-white">{scoreResult.primary.name ?? '未命名结果'}</h2>
-            <p className="text-sm text-slate-200">{scoreResult.primary.title ?? scoreResult.primary.role ?? '暂无定位'}</p>
-            <p className="text-xs text-slate-300">关键词：{scoreResult.primary.keywords?.join('、') ?? '暂无'}</p>
-            <p className="text-sm leading-6 break-words text-slate-200">{scoreResult.primary.description ?? scoreResult.primary.function ?? '暂无描述'}</p>
-            <p className="text-sm leading-6 break-words text-slate-300">科学解释：{scoreResult.primary.scienceExplanation ?? '暂无科学解释'}</p>
-            {scoreResult.primary.lines?.length ? <p className="text-sm text-slate-300">补充：{scoreResult.primary.lines.join(' / ')}</p> : null}
-            <p className="text-sm italic leading-6 break-words text-cyan-200">“{scoreResult.primary.quote ?? '暂无引言'}”</p>
-            <p className="text-sm text-emerald-300">主要得分：{scoreResult.primaryScore}</p>
-            {scoreResult.ties.length ? (
-              <p className="text-sm text-amber-200">你也具有 {scoreResult.ties.map((item) => item.name ?? '未知').join('、')} 的特质。</p>
-            ) : null}
-            {scoreResult.ranked.length ? (
-              <div className="space-y-1 text-xs text-slate-300">
-                <p>其他高分特质：</p>
-                {scoreResult.ranked.map((item) => (
-                  <p key={item.result.id}>{item.result.name ?? '未知'}：{item.score}</p>
-                ))}
+          <div className="space-y-4">
+            <p className="text-center text-xs uppercase tracking-[0.24em] text-slate-400">测试结果已生成</p>
+            <h2 className="text-center text-3xl font-extrabold tracking-wide text-white sm:text-4xl">你的{resultType}画像</h2>
+            <div className="flex flex-wrap justify-center gap-2">
+              {(scoreResult.primary.keywords?.length ? scoreResult.primary.keywords : ['待补充']).map((keyword) => (
+                <span key={keyword} className={`inline-flex rounded-full px-3 py-1 text-xs font-medium ${accent.tag}`}>{keyword}</span>
+              ))}
+            </div>
+
+            <div className={`rounded-2xl border ${accent.border} ${accent.glow} bg-slate-950/80 p-5 shadow-xl`}>
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-400">主结果辉光卡</p>
+              <h3 className="mt-2 text-2xl font-bold text-white">{scoreResult.primary.name ?? '未命名结果'}</h3>
+              <p className="mt-1 text-sm text-slate-200">{scoreResult.primary.title ?? scoreResult.primary.role ?? '暂无定位'}</p>
+              <p className="mt-3 text-sm leading-6 break-words text-slate-200">{scoreResult.primary.description ?? scoreResult.primary.function ?? '暂无描述'}</p>
+              <p className="mt-2 text-sm leading-6 break-words text-slate-300">科学解释：{scoreResult.primary.scienceExplanation ?? '暂无科学解释'}</p>
+              <p className="mt-3 inline-flex rounded-lg bg-slate-900/80 px-3 py-1 text-sm font-semibold text-emerald-300">主要得分：{scoreResult.primaryScore}</p>
+              {scoreResult.primary.lines?.length ? <p className="mt-2 text-xs text-slate-300">补充：{scoreResult.primary.lines.join(' / ')}</p> : null}
+              <p className="mt-3 text-sm italic leading-6 break-words text-cyan-200">“{scoreResult.primary.quote ?? '暂无引言'}”</p>
+            </div>
+
+            <div className="grid gap-3 md:grid-cols-2">
+              <div className="rounded-xl border border-slate-700/80 bg-slate-950/50 p-4">
+                <p className="text-xs uppercase tracking-[0.18em] text-slate-400">副结果列表分区</p>
+                {scoreResult.ties.length ? (
+                  <p className="mt-2 text-sm text-amber-200">你也具有 {scoreResult.ties.map((item) => item.name ?? '未知').join('、')} 的特质。</p>
+                ) : (
+                  <p className="mt-2 text-sm text-slate-300">本次没有并列主结果。</p>
+                )}
               </div>
-            ) : null}
+              <div className="rounded-xl border border-slate-700/80 bg-slate-950/50 p-4 text-xs text-slate-300">
+                <p className="uppercase tracking-[0.18em] text-slate-400">高分候选</p>
+                {scoreResult.ranked.length ? scoreResult.ranked.map((item) => <p key={item.result.id} className="mt-2">{item.result.name ?? '未知'}：{item.score}</p>) : <p className="mt-2">暂无其他高分特质。</p>}
+              </div>
+            </div>
+
             <div className="flex flex-wrap gap-2 pt-2">
               <Button className={accent.button} onClick={resetQuiz}>重新测试</Button>
               <Button onClick={copyResult}>复制测试结果</Button>
@@ -203,22 +221,41 @@ export function QuizEngine({ questionDatasetKey, resultDatasetKey, title, subtit
         </Card>
       ) : (
         <Card className={`border ${accent.border} ${accent.glow} bg-slate-900/70 animate-fadeIn`}>
-          <div className="mb-3 h-2 w-full rounded-full bg-slate-800">
-            <div className={`h-2 rounded-full ${accent.progress}`} style={{ width: `${((currentIndex + 1) / total) * 100}%` }} />
+          <div className="rounded-xl border border-slate-700/70 bg-slate-950/60 p-4">
+            <p className="text-xs uppercase tracking-[0.22em] text-slate-400">终端问题卡</p>
+            <div className="mt-3 h-3 w-full overflow-hidden rounded-full bg-slate-800/90">
+              <div
+                className={`h-full rounded-full ${accent.progress} shadow-[0_0_16px_rgba(56,189,248,0.55)] transition-[width] duration-500 ease-out`}
+                style={{ width: `${((currentIndex + 1) / total) * 100}%` }}
+              />
+            </div>
+            <div className="mt-2 flex items-center justify-between text-[11px] text-slate-400">
+              <span>能量/扫描进度</span>
+              <span>{currentIndex + 1} / {total}</span>
+            </div>
+            <h2 className="mt-3 text-lg font-semibold text-white">{currentQuestion.question}</h2>
           </div>
-          <p className="text-xs text-slate-400">第 {currentIndex + 1} / {total} 题</p>
-          <h2 className="mt-2 text-lg font-semibold text-white">{currentQuestion.question}</h2>
-          <div className="mt-4 space-y-2">
-            {currentQuestion.options.map((option, idx) => (
-              <button
-                key={`${currentQuestion.id}-${option.label}`}
-                type="button"
-                className={`w-full rounded-lg border px-3 py-3 text-left text-sm transition ${answers[currentIndex] === idx ? `${accent.border} bg-slate-800 text-white` : 'border-slate-700 bg-slate-900/60 text-slate-200 hover:border-slate-500'}`}
-                onClick={() => selectOption(idx)}
-              >
-                <span className="mr-2 text-cyan-200">{option.label}.</span>{option.text}
-              </button>
-            ))}
+
+          <div className="mt-4 space-y-3">
+            {currentQuestion.options.map((option, idx) => {
+              const isSelected = answers[currentIndex] === idx;
+              return (
+                <button
+                  key={`${currentQuestion.id}-${option.label}`}
+                  type="button"
+                  className={`group w-full rounded-xl border px-4 py-4 text-left text-sm transition-all duration-200 ${isSelected ? `${accent.border} bg-slate-800 text-white ring-2 ring-offset-0 ring-cyan-300/50` : 'border-slate-700 bg-slate-900/70 text-slate-200 hover:-translate-y-0.5 hover:border-slate-500 hover:bg-slate-800/80'}`}
+                  onClick={() => selectOption(idx)}
+                  aria-pressed={isSelected}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <p><span className="mr-2 text-cyan-200">{option.label}.</span>{option.text}</p>
+                    <span className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[10px] ${isSelected ? 'border-cyan-200 bg-cyan-300/20 text-cyan-100' : 'border-slate-500 text-slate-400 group-hover:border-slate-400'}`}>
+                      {isSelected ? '✓' : ''}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             <Button onClick={() => setCurrentIndex((prev) => Math.max(prev - 1, 0))} disabled={currentIndex === 0}>上一题</Button>
