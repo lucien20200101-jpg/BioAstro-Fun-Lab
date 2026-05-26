@@ -6,4 +6,5 @@ export type ToolEntry = {
   description: string;
   category: ToolCategory;
   path: string;
+  status: 'ready' | 'coming-soon';
 };

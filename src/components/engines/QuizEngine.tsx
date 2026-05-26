@@ -178,10 +178,10 @@ export function QuizEngine({ questionDatasetKey, resultDatasetKey, title, subtit
             <h2 className="text-2xl font-semibold text-white">{scoreResult.primary.name ?? '未命名结果'}</h2>
             <p className="text-sm text-slate-200">{scoreResult.primary.title ?? scoreResult.primary.role ?? '暂无定位'}</p>
             <p className="text-xs text-slate-300">关键词：{scoreResult.primary.keywords?.join('、') ?? '暂无'}</p>
-            <p className="text-sm text-slate-200">{scoreResult.primary.description ?? scoreResult.primary.function ?? '暂无描述'}</p>
-            <p className="text-sm text-slate-300">科学解释：{scoreResult.primary.scienceExplanation ?? '暂无科学解释'}</p>
+            <p className="text-sm leading-6 break-words text-slate-200">{scoreResult.primary.description ?? scoreResult.primary.function ?? '暂无描述'}</p>
+            <p className="text-sm leading-6 break-words text-slate-300">科学解释：{scoreResult.primary.scienceExplanation ?? '暂无科学解释'}</p>
             {scoreResult.primary.lines?.length ? <p className="text-sm text-slate-300">补充：{scoreResult.primary.lines.join(' / ')}</p> : null}
-            <p className="text-sm italic text-cyan-200">“{scoreResult.primary.quote ?? '暂无引言'}”</p>
+            <p className="text-sm italic leading-6 break-words text-cyan-200">“{scoreResult.primary.quote ?? '暂无引言'}”</p>
             <p className="text-sm text-emerald-300">主要得分：{scoreResult.primaryScore}</p>
             {scoreResult.ties.length ? (
               <p className="text-sm text-amber-200">你也具有 {scoreResult.ties.map((item) => item.name ?? '未知').join('、')} 的特质。</p>

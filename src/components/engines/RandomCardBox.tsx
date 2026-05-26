@@ -141,12 +141,12 @@ export function RandomCardBox({ datasetKey, title, subtitle, accent, emptyText }
                   难度：{selectedCard.difficulty ?? '未知'}
                 </span>
               </div>
-              <p className="text-sm text-slate-200">{selectedCard.summary ?? '暂无摘要'}</p>
-              <p className="text-sm leading-6 text-slate-300">{selectedCard.detail ?? '暂无详细解释'}</p>
-              <p className="text-xs text-slate-300">
+              <p className="text-sm leading-6 break-words text-slate-200">{selectedCard.summary ?? '暂无摘要'}</p>
+              <p className="text-sm leading-7 break-words text-slate-300">{selectedCard.detail ?? '暂无详细解释'}</p>
+              <p className="text-xs leading-6 text-slate-300 break-words">
                 关键词：{Array.isArray(selectedCard.keywords) && selectedCard.keywords.length ? selectedCard.keywords.join('、') : '暂无'}
               </p>
-              <p className="text-sm text-slate-200">延伸问题：{selectedCard.question ?? '暂无延伸问题'}</p>
+              <p className="text-sm leading-6 break-words text-slate-200">延伸问题：{selectedCard.question ?? '暂无延伸问题'}</p>
               <div className="flex flex-wrap gap-2 pt-2">
                 <Button className={accent.button} onClick={drawCard}>再抽一次</Button>
                 <Button onClick={handleCopy}>复制卡片内容</Button>
