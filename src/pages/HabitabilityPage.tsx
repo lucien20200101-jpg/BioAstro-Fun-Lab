@@ -101,7 +101,7 @@ export function HabitabilityPage() {
   }
 
   return (
-    <section className="space-y-4">
+    <section className="space-y-4 pb-2">
       <SectionHeader title="星球宜居性评分器" subtitle="基于简化条件判断，结果仅供科普讨论" />
 
       <Card className="space-y-3">
@@ -186,7 +186,7 @@ export function HabitabilityPage() {
         <p className="text-sm">环境稳定性：{selectedWorld?.stability}</p>
         <p className="text-sm">宜居性评分：{result?.score}</p>
         <p className="text-sm">可能生命类型：{result?.possibleLifeType}</p>
-        <p className="text-sm break-words">探测建议：{detectionAdvice.join('；')}</p>
+        <p className="overflow-x-auto whitespace-pre-wrap break-words text-sm">探测建议：{detectionAdvice.join('；')}</p>
       </Card>
 
       <Card className="space-y-2">

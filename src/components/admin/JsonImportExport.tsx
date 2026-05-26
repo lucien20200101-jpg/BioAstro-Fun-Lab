@@ -22,7 +22,7 @@ export function JsonImportExport({ datasetKey, onImported }: JsonImportExportPro
       </div>
       <div>
         <p className="mb-1 text-xs text-slate-300">导入当前数据集 JSON（数组）</p>
-        <Textarea rows={8} value={currentJson} onChange={(e) => setCurrentJson(e.target.value)} placeholder="粘贴 JSON 数组..." className="whitespace-pre overflow-x-auto" />
+        <Textarea rows={8} value={currentJson} onChange={(e) => setCurrentJson(e.target.value)} placeholder="粘贴 JSON 数组..." className="overflow-x-auto whitespace-pre-wrap break-words" />
         <Button
           type="button"
           className="mt-2"
@@ -41,7 +41,7 @@ export function JsonImportExport({ datasetKey, onImported }: JsonImportExportPro
       </div>
       <div>
         <p className="mb-1 text-xs text-slate-300">导入全部数据集备份（对象）</p>
-        <Textarea rows={8} value={backupJson} onChange={(e) => setBackupJson(e.target.value)} placeholder="粘贴 backup JSON 对象..." className="whitespace-pre overflow-x-auto" />
+        <Textarea rows={8} value={backupJson} onChange={(e) => setBackupJson(e.target.value)} placeholder="粘贴 backup JSON 对象..." className="overflow-x-auto whitespace-pre-wrap break-words" />
         <Button
           type="button"
           className="mt-2"
