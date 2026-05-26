@@ -80,84 +80,94 @@ export function DNATranslatorPage() {
 
   return (
     <div className="space-y-4 pb-2 text-slate-100">
-      <Card>
-        <h2 className="text-lg font-semibold text-cosmic-bioGreen">DNA 密码翻译器</h2>
-        <p className="mb-3 text-sm text-slate-300">输入 DNA，按模板链或编码链模式转录并翻译为氨基酸。</p>
-        <div className="grid gap-4 lg:grid-cols-2">
-          <section className="space-y-3">
-            <h3 className="text-sm font-semibold text-cosmic-bioGreen">输入区</h3>
-            <Textarea value={input} rows={7} onChange={(event) => setInput(event.target.value)} placeholder="例如：TACGCCATT" className="tracking-wide whitespace-pre-wrap break-words" />
-            <p className="text-xs text-slate-300">会自动移除空格/换行并转成大写，仅允许 A/T/C/G。</p>
-            {warning && <p className="text-xs text-amber-300">{warning}</p>}
+      <Card className="relative overflow-hidden border-cyan-400/30 bg-slate-950/60">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.22),_transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/90 to-transparent" />
+        <div className="relative">
+          <h2 className="text-lg font-semibold text-cosmic-bioGreen">DNA 密码翻译器</h2>
+          <p className="mb-3 text-sm text-slate-300">输入 DNA，按模板链或编码链模式转录并翻译为氨基酸。</p>
+          <div className="grid gap-4 lg:grid-cols-2">
+            <section className="space-y-3 rounded-xl border border-cyan-500/20 bg-slate-900/40 p-3">
+              <h3 className="text-sm font-semibold text-cosmic-bioGreen">输入区</h3>
+              <Textarea value={input} rows={7} onChange={(event) => setInput(event.target.value)} placeholder="例如：TACGCCATT" className="tracking-wide whitespace-pre-wrap break-words" />
+              <p className="text-xs text-slate-300">会自动移除空格/换行并转成大写，仅允许 A/T/C/G。</p>
+              {warning && <p className="text-xs text-amber-300">{warning}</p>}
 
-            <div className="space-y-2">
-              <h4 className="text-sm font-semibold text-cyan-300">示例案例（bio.dna_cases）</h4>
-              <div className="flex flex-wrap gap-2">
-                {enabledCases.length > 0 ? enabledCases.map((item) => (
-                  <Button key={item.id} type="button" className="bg-cosmic-bioBlue/20" onClick={() => { setInput(item.dnaSequence); setMutation(null) }}>
-                    {item.name}
-                  </Button>
-                )) : <p className="text-xs text-slate-400">当前无启用案例，可手动输入序列继续使用。</p>}
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold text-cyan-300">示例案例（bio.dna_cases）</h4>
+                <div className="flex flex-wrap gap-2">
+                  {enabledCases.length > 0 ? enabledCases.map((item) => (
+                    <Button key={item.id} type="button" className="border-cyan-400/30 bg-cosmic-bioBlue/20" onClick={() => { setInput(item.dnaSequence); setMutation(null) }}>
+                      {item.name}
+                    </Button>
+                  )) : <p className="text-xs text-slate-400">当前无启用案例，可手动输入序列继续使用。</p>}
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section className="space-y-3">
-            <h3 className="text-sm font-semibold text-cosmic-bioBlue">转录模式区</h3>
-            <div className="grid grid-cols-2 gap-2">
-              <Button type="button" className={mode === 'template' ? 'border-emerald-300 bg-emerald-500/30' : ''} onClick={() => setMode('template')}>模板链模式</Button>
-              <Button type="button" className={mode === 'coding' ? 'border-sky-300 bg-sky-500/30' : ''} onClick={() => setMode('coding')}>编码链模式</Button>
-            </div>
-            <p className="text-xs text-slate-300">模板链模式：按互补配对 A→U、T→A、C→G、G→C。编码链模式：保持序列方向，仅把 T 替换为 U。</p>
-          </section>
+            <section className="space-y-3 rounded-xl border border-cosmic-nebulaPurple/30 bg-slate-900/40 p-3">
+              <h3 className="text-sm font-semibold text-cosmic-bioBlue">转录模式区</h3>
+              <div className="grid grid-cols-2 gap-2">
+                <Button type="button" className={mode === 'template' ? 'border-emerald-300 bg-emerald-500/30' : ''} onClick={() => setMode('template')}>模板链模式</Button>
+                <Button type="button" className={mode === 'coding' ? 'border-sky-300 bg-sky-500/30' : ''} onClick={() => setMode('coding')}>编码链模式</Button>
+              </div>
+              <p className="text-xs text-slate-300">模板链模式：按互补配对 A→U、T→A、C→G、G→C。编码链模式：保持序列方向，仅把 T 替换为 U。</p>
+            </section>
+          </div>
         </div>
       </Card>
 
-      <Card>
-        <h2 className="text-lg font-semibold text-cyan-300">结果区</h2>
-        <p className="mb-3 text-sm text-slate-300">显示清理后的序列、mRNA、密码子与翻译结果。</p>
-        <div className="space-y-2 text-sm">
-          <p>清理后 DNA：<span className="block overflow-x-auto whitespace-pre-wrap break-words text-cyan-200">{activeSequence || '-'}</span></p>
-          <p>当前模式：{mode === 'template' ? '模板链模式' : '编码链模式'}</p>
-          <p>mRNA：<span className="block overflow-x-auto whitespace-pre-wrap break-words text-emerald-200">{activeResult.mrna || '-'}</span></p>
-          <p>氨基酸序列：{activeResult.aminoAcidSequence || '-'}</p>
-          <p>序列长度：{activeSequence.length}；完整密码子：{activeResult.codons.length}；不完整尾部：{activeResult.remainder.length}</p>
-          <p>起始密码子(AUG)：{activeResult.startCodonIndexes.length > 0 ? '存在' : '不存在'}；终止密码子(UAA/UAG/UGA)：{activeResult.stopCodonIndexes.length > 0 ? '存在' : '不存在'}</p>
-          {activeResult.startCodonIndexes.length === 0 && activeResult.codons.length > 0 && (
-            <p className="text-xs text-amber-300">未检测到 AUG 起始密码子，当前翻译仅为按三联体机械翻译结果。</p>
+      <Card className="relative overflow-hidden border-emerald-400/30 bg-slate-950/60">
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(16,185,129,0.12),transparent_35%)]" />
+        <div className="relative">
+          <h2 className="text-lg font-semibold text-cyan-300">结果区</h2>
+          <p className="mb-3 text-sm text-slate-300">显示清理后的序列、mRNA、密码子与翻译结果。</p>
+          <div className="space-y-2 text-sm">
+            <p>清理后 DNA：<span className="block overflow-x-auto whitespace-pre-wrap break-words text-cyan-200">{activeSequence || '-'}</span></p>
+            <p>当前模式：{mode === 'template' ? '模板链模式' : '编码链模式'}</p>
+            <p>mRNA：<span className="block overflow-x-auto whitespace-pre-wrap break-words text-emerald-200">{activeResult.mrna || '-'}</span></p>
+            <p>氨基酸序列：{activeResult.aminoAcidSequence || '-'}</p>
+            <p>序列长度：{activeSequence.length}；完整密码子：{activeResult.codons.length}；不完整尾部：{activeResult.remainder.length}</p>
+            <p>起始密码子(AUG)：{activeResult.startCodonIndexes.length > 0 ? '存在' : '不存在'}；终止密码子(UAA/UAG/UGA)：{activeResult.stopCodonIndexes.length > 0 ? '存在' : '不存在'}</p>
+            {activeResult.startCodonIndexes.length === 0 && activeResult.codons.length > 0 && (
+              <p className="text-xs text-amber-300">未检测到 AUG 起始密码子，当前翻译仅为按三联体机械翻译结果。</p>
+            )}
+            <div className="flex flex-wrap gap-2 overflow-x-auto pt-1">
+              {activeResult.codons.map((codon, index) => {
+                const isStart = codon === 'AUG'
+                const isStop = ['UAA', 'UAG', 'UGA'].includes(codon)
+                return (
+                  <span key={`${codon}-${index}`} className={`rounded-full px-2 py-1 text-xs ${isStart ? 'bg-emerald-500/30 text-emerald-100' : isStop ? 'bg-rose-500/30 text-rose-100' : 'bg-slate-700/70 text-slate-200'}`}>
+                    {codon}
+                  </span>
+                )
+              })}
+              {activeResult.remainder && <span className="rounded-full bg-amber-500/25 px-2 py-1 text-xs text-amber-100">不完整片段: {activeResult.remainder}</span>}
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      <Card className="relative overflow-hidden border-violet-400/30 bg-slate-950/60">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.2),_transparent_60%)]" />
+        <div className="relative">
+          <h2 className="text-lg font-semibold text-violet-300">突变分析区</h2>
+          <p className="mb-3 text-sm text-slate-300">随机替换/插入/缺失碱基并比较前后翻译结果。</p>
+          <div className="flex flex-wrap gap-2">
+            <Button type="button" onClick={runRandomMutation} disabled={!cleaned || !validation.valid}>随机突变</Button>
+            <Button type="button" onClick={() => setMutation(null)} disabled={!mutation}>清除突变</Button>
+            <Button type="button" onClick={copyResult} disabled={!cleaned || !validation.valid}>复制结果</Button>
+            {copyStatus && <span className="text-xs text-cyan-200">{copyStatus}</span>}
+          </div>
+          {mutation && (
+            <div className="mt-3 space-y-1 text-sm text-slate-200">
+              <p>{mutation.label}</p>
+              <p>位置：第 {mutation.position + 1} 位；突变前：{mutation.before}；突变后：{mutation.after}</p>
+              <p className="text-cosmic-bioGreen">{classification?.message}</p>
+              <p className="text-xs text-slate-400">说明：该判断基于当前输入序列和当前阅读框的简化分析。</p>
+            </div>
           )}
-          <div className="flex flex-wrap gap-2 pt-1">
-            {activeResult.codons.map((codon, index) => {
-              const isStart = codon === 'AUG'
-              const isStop = ['UAA', 'UAG', 'UGA'].includes(codon)
-              return (
-                <span key={`${codon}-${index}`} className={`rounded-full px-2 py-1 text-xs ${isStart ? 'bg-emerald-500/30 text-emerald-100' : isStop ? 'bg-rose-500/30 text-rose-100' : 'bg-slate-700/70 text-slate-200'}`}>
-                  {codon}
-                </span>
-              )
-            })}
-            {activeResult.remainder && <span className="rounded-full bg-amber-500/25 px-2 py-1 text-xs text-amber-100">不完整片段: {activeResult.remainder}</span>}
-          </div>
         </div>
-      </Card>
-
-      <Card>
-        <h2 className="text-lg font-semibold text-violet-300">突变分析区</h2>
-        <p className="mb-3 text-sm text-slate-300">随机替换/插入/缺失碱基并比较前后翻译结果。</p>
-        <div className="flex flex-wrap gap-2">
-          <Button type="button" onClick={runRandomMutation} disabled={!cleaned || !validation.valid}>随机突变</Button>
-          <Button type="button" onClick={() => setMutation(null)} disabled={!mutation}>清除突变</Button>
-          <Button type="button" onClick={copyResult} disabled={!cleaned || !validation.valid}>复制结果</Button>
-          {copyStatus && <span className="text-xs text-cyan-200">{copyStatus}</span>}
-        </div>
-        {mutation && (
-          <div className="mt-3 space-y-1 text-sm text-slate-200">
-            <p>{mutation.label}</p>
-            <p>位置：第 {mutation.position + 1} 位；突变前：{mutation.before}；突变后：{mutation.after}</p>
-            <p className="text-cosmic-bioGreen">{classification?.message}</p>
-            <p className="text-xs text-slate-400">说明：该判断基于当前输入序列和当前阅读框的简化分析。</p>
-          </div>
-        )}
       </Card>
     </div>
   )
