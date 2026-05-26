@@ -112,8 +112,12 @@ export function HabitabilityPage() {
       </Card>
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <Card className="space-y-3">
-          <h3 className="font-semibold">环境条件设置区</h3>
+        <Card className="relative space-y-3 overflow-hidden border border-cyan-500/30 bg-slate-950/70">
+          <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.35),transparent_45%),linear-gradient(rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.12)_1px,transparent_1px)] [background-size:auto,22px_22px,22px_22px]" />
+          <div className="relative">
+            <h3 className="font-semibold text-cyan-100">环境控制台参数面板</h3>
+            <p className="text-xs text-cyan-200/80">简化模型输入模块（用于科普推测，不替代真实天体环境测量）。</p>
+          </div>
           {[
             ['hasLiquidWater', '是否存在液态水'],
             ['hasStableAtmosphere', '是否存在稳定大气'],
@@ -124,7 +128,7 @@ export function HabitabilityPage() {
             ['stableEnergySource', '是否有稳定能量来源'],
             ['hasOrganics', '是否存在有机物'],
           ].map(([key, label]) => (
-            <label key={key} className="flex items-center justify-between gap-3 rounded-lg border border-slate-700/60 bg-slate-900/40 px-3 py-2 text-sm">
+            <label key={key} className="relative flex items-center justify-between gap-3 rounded-lg border border-slate-700/80 bg-slate-900/70 px-3 py-2 text-sm">
               <span>{label}</span>
               <input className="h-5 w-5 accent-emerald-400" type="checkbox" checked={input[key as keyof HabitabilityInput] as boolean} onChange={(e) => setInput((prev) => ({ ...prev, [key]: e.target.checked }))} />
             </label>
@@ -149,23 +153,33 @@ export function HabitabilityPage() {
           </label>
         </Card>
 
-        <Card className="space-y-3">
-          <h3 className="font-semibold">评分结果区</h3>
-          <p className="text-3xl font-bold text-cosmic-lifeGreen">{result?.score ?? 0}<span className="text-base text-cosmic-textMuted">/100</span></p>
-          <p className="text-sm">宜居性等级：<span className="font-semibold">{result?.level ?? '低'}</span></p>
+        <Card className="relative space-y-3 overflow-hidden border border-violet-500/30 bg-slate-950/75">
+          <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_70%_20%,rgba(168,85,247,0.35),transparent_45%),repeating-linear-gradient(90deg,rgba(148,163,184,0.1)_0px,rgba(148,163,184,0.1)_1px,transparent_1px,transparent_8px)]" />
+          <h3 className="relative font-semibold">评分结果区</h3>
+          <div className="relative rounded-xl border border-cosmic-lifeGreen/40 bg-black/35 p-4 text-center shadow-[0_0_26px_rgba(74,222,128,0.25)]">
+            <p className="text-xs uppercase tracking-[0.24em] text-cosmic-textMuted">Habitability Index</p>
+            <p className="text-5xl font-black text-cosmic-lifeGreen">{result?.score ?? 0}<span className="text-base text-cosmic-textMuted">/100</span></p>
+            <p className="mt-1 text-sm">等级：<span className="rounded-full border border-cosmic-starlight/30 bg-cosmic-nebulaPurple/20 px-2 py-1 font-semibold">{result?.level ?? '低'}</span></p>
+          </div>
+          <p className="relative rounded-lg border border-amber-300/40 bg-amber-500/10 p-2 text-sm text-amber-100">⚠ 本结果是简化模型推测，不代表确定结论；“可能存在生命”不等于“已经发现生命”，仍有待后续探测验证。</p>
           <p className="text-sm text-cosmic-textMuted">{result?.explanation}</p>
-          <div>
-            <p className="text-sm font-medium">主要优势</p>
-            <ul className="list-disc pl-5 text-sm">{result?.advantages.map((item) => <li key={item}>{item}</li>)}</ul>
-          </div>
-          <div>
-            <p className="text-sm font-medium">主要风险</p>
-            <ul className="list-disc pl-5 text-sm">{result?.risks.map((item) => <li key={item}>{item}</li>)}</ul>
-          </div>
-          <p className="text-sm">可能生命类型：{result?.possibleLifeType}</p>
-          <div>
-            <p className="text-sm font-medium">探测建议</p>
-            <ul className="list-disc pl-5 text-sm">{detectionAdvice.map((item) => <li key={item}>{item}</li>)}</ul>
+          <div className="grid gap-2 md:grid-cols-2">
+            <div className="rounded-lg border border-emerald-400/30 bg-emerald-500/10 p-3">
+              <p className="mb-1 text-sm font-medium text-emerald-200">主要优势</p>
+              <ul className="list-disc pl-5 text-sm">{result?.advantages.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+            <div className="rounded-lg border border-rose-400/30 bg-rose-500/10 p-3">
+              <p className="mb-1 text-sm font-medium text-rose-200">主要风险</p>
+              <ul className="list-disc pl-5 text-sm">{result?.risks.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+            <div className="rounded-lg border border-sky-400/30 bg-sky-500/10 p-3">
+              <p className="mb-1 text-sm font-medium text-sky-200">生命可能性（推测）</p>
+              <p className="text-sm">{result?.possibleLifeType}</p>
+            </div>
+            <div className="rounded-lg border border-violet-400/30 bg-violet-500/10 p-3">
+              <p className="mb-1 text-sm font-medium text-violet-200">探测建议（待验证）</p>
+              <ul className="list-disc pl-5 text-sm">{detectionAdvice.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
           </div>
           <Button onClick={copyReport}>复制评分结果</Button>
           {copyStatus ? <p className="text-xs text-cosmic-starlight">{copyStatus}</p> : null}
@@ -200,7 +214,7 @@ export function HabitabilityPage() {
             </li>
           ))}
         </ul>
-        <p className="text-xs text-cosmic-textMuted">免责声明：本工具是基于简化规则的科普推理，不是专业天体生物学评估模型，所有结论均有待探测验证。</p>
+        <p className="rounded-md border border-amber-300/40 bg-amber-500/10 px-2 py-1 text-xs text-amber-100">免责声明：本工具基于简化规则进行科普推理，涉及“可能/推测/有待验证”的结论，不构成专业天体生物学评估。</p>
       </Card>
     </section>
   );

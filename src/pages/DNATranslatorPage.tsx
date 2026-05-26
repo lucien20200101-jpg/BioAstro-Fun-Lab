@@ -86,7 +86,10 @@ export function DNATranslatorPage() {
         <div className="grid gap-4 lg:grid-cols-2">
           <section className="space-y-3">
             <h3 className="text-sm font-semibold text-cosmic-bioGreen">输入区</h3>
-            <Textarea value={input} rows={7} onChange={(event) => setInput(event.target.value)} placeholder="例如：TACGCCATT" className="tracking-wide" />
+            <div className="rounded-xl border border-cyan-400/40 bg-slate-950/70 p-3 shadow-[0_0_22px_rgba(56,189,248,0.12)]">
+              <p className="mb-2 text-xs uppercase tracking-[0.25em] text-cyan-300/80">Sequence Scanner</p>
+              <Textarea value={input} rows={7} onChange={(event) => setInput(event.target.value)} placeholder="例如：TACGCCATT" className="border-cyan-300/40 bg-black/40 font-mono tracking-[0.18em] text-cyan-100" />
+            </div>
             <p className="text-xs text-slate-300">会自动移除空格/换行并转成大写，仅允许 A/T/C/G。</p>
             {warning && <p className="text-xs text-amber-300">{warning}</p>}
 
@@ -104,9 +107,9 @@ export function DNATranslatorPage() {
 
           <section className="space-y-3">
             <h3 className="text-sm font-semibold text-cosmic-bioBlue">转录模式区</h3>
-            <div className="grid grid-cols-2 gap-2">
-              <Button type="button" className={mode === 'template' ? 'border-emerald-300 bg-emerald-500/30' : ''} onClick={() => setMode('template')}>模板链模式</Button>
-              <Button type="button" className={mode === 'coding' ? 'border-sky-300 bg-sky-500/30' : ''} onClick={() => setMode('coding')}>编码链模式</Button>
+            <div className="inline-flex rounded-xl border border-slate-600/80 bg-slate-900/80 p-1">
+              <button type="button" className={`rounded-lg px-3 py-2 text-sm transition ${mode === 'template' ? 'bg-emerald-500/35 text-emerald-100 shadow-inner' : 'text-slate-300 hover:text-white'}`} onClick={() => setMode('template')}>模板链</button>
+              <button type="button" className={`rounded-lg px-3 py-2 text-sm transition ${mode === 'coding' ? 'bg-sky-500/35 text-sky-100 shadow-inner' : 'text-slate-300 hover:text-white'}`} onClick={() => setMode('coding')}>编码链</button>
             </div>
             <p className="text-xs text-slate-300">模板链模式：按互补配对 A→U、T→A、C→G、G→C。编码链模式：保持序列方向，仅把 T 替换为 U。</p>
           </section>
@@ -117,21 +120,29 @@ export function DNATranslatorPage() {
         <h2 className="text-lg font-semibold text-cyan-300">结果区</h2>
         <p className="mb-3 text-sm text-slate-300">显示清理后的序列、mRNA、密码子与翻译结果。</p>
         <div className="space-y-2 text-sm">
-          <p>清理后 DNA：<span className="block overflow-x-auto text-cyan-200 break-all">{activeSequence || '-'}</span></p>
+          <p>清理后 DNA：</p>
+          <div className="relative overflow-hidden rounded-lg border border-cyan-400/30 bg-black/70 p-2 font-mono text-cyan-200">
+            <div className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(180deg,rgba(148,163,184,0.08)_0px,rgba(148,163,184,0.08)_1px,transparent_1px,transparent_3px)]" />
+            <span className="relative block overflow-x-auto break-all tracking-[0.16em]">{activeSequence || '-'}</span>
+          </div>
           <p>当前模式：{mode === 'template' ? '模板链模式' : '编码链模式'}</p>
-          <p>mRNA：<span className="block overflow-x-auto text-emerald-200 break-all">{activeResult.mrna || '-'}</span></p>
+          <p>mRNA：</p>
+          <div className="relative overflow-hidden rounded-lg border border-emerald-400/30 bg-black/70 p-2 font-mono text-emerald-200">
+            <div className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(180deg,rgba(148,163,184,0.08)_0px,rgba(148,163,184,0.08)_1px,transparent_1px,transparent_3px)]" />
+            <span className="relative block overflow-x-auto break-all tracking-[0.16em]">{activeResult.mrna || '-'}</span>
+          </div>
           <p>氨基酸序列：{activeResult.aminoAcidSequence || '-'}</p>
           <p>序列长度：{activeSequence.length}；完整密码子：{activeResult.codons.length}；不完整尾部：{activeResult.remainder.length}</p>
           <p>起始密码子(AUG)：{activeResult.startCodonIndexes.length > 0 ? '存在' : '不存在'}；终止密码子(UAA/UAG/UGA)：{activeResult.stopCodonIndexes.length > 0 ? '存在' : '不存在'}</p>
           {activeResult.startCodonIndexes.length === 0 && activeResult.codons.length > 0 && (
-            <p className="text-xs text-amber-300">未检测到 AUG 起始密码子，当前翻译仅为按三联体机械翻译结果。</p>
+            <p className="rounded-lg border border-amber-300/40 bg-amber-500/10 px-2 py-1 text-xs text-amber-200">未检测到 AUG 起始密码子，当前翻译仅为按三联体机械翻译结果（简化演示，不代表完整生物过程）。</p>
           )}
           <div className="flex flex-wrap gap-2 pt-1">
             {activeResult.codons.map((codon, index) => {
               const isStart = codon === 'AUG'
               const isStop = ['UAA', 'UAG', 'UGA'].includes(codon)
               return (
-                <span key={`${codon}-${index}`} className={`rounded-full px-2 py-1 text-xs ${isStart ? 'bg-emerald-500/30 text-emerald-100' : isStop ? 'bg-rose-500/30 text-rose-100' : 'bg-slate-700/70 text-slate-200'}`}>
+                <span key={`${codon}-${index}`} className={`rounded-full border px-2 py-1 text-xs font-semibold ${isStart ? 'border-emerald-300/70 bg-emerald-500/35 text-emerald-50 shadow-[0_0_10px_rgba(16,185,129,0.35)]' : isStop ? 'border-rose-300/70 bg-rose-500/35 text-rose-50 shadow-[0_0_10px_rgba(244,63,94,0.35)]' : 'border-slate-600 bg-slate-700/70 text-slate-200'}`}>
                   {codon}
                 </span>
               )
@@ -155,7 +166,7 @@ export function DNATranslatorPage() {
             <p>{mutation.label}</p>
             <p>位置：第 {mutation.position + 1} 位；突变前：{mutation.before}；突变后：{mutation.after}</p>
             <p className="text-cosmic-bioGreen">{classification?.message}</p>
-            <p className="text-xs text-slate-400">说明：该判断基于当前输入序列和当前阅读框的简化分析。</p>
+            <p className="rounded-md border border-slate-600/70 bg-slate-900/50 px-2 py-1 text-xs text-slate-300">说明：该判断基于当前输入序列和当前阅读框的简化分析，属于推测性结果，仍有待实验验证。</p>
           </div>
         )}
       </Card>
