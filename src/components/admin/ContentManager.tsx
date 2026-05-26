@@ -62,6 +62,7 @@ export function ContentManager({ datasetKey }: ContentManagerProps) {
           </button>;
         })}
       </div>
+      {filtered.length === 0 ? <p className="text-xs text-slate-400 lg:col-span-2">没有匹配条目，请调整搜索词或分类筛选。</p> : null}
       <div className="rounded-xl border border-slate-700 bg-slate-950/40 p-3">
         <ContentEditor
           item={selectedItem}

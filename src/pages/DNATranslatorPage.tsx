@@ -86,7 +86,7 @@ export function DNATranslatorPage() {
         <div className="grid gap-4 lg:grid-cols-2">
           <section className="space-y-3">
             <h3 className="text-sm font-semibold text-cosmic-bioGreen">输入区</h3>
-            <Textarea value={input} rows={5} onChange={(event) => setInput(event.target.value)} placeholder="例如：TACGCCATT" />
+            <Textarea value={input} rows={7} onChange={(event) => setInput(event.target.value)} placeholder="例如：TACGCCATT" className="tracking-wide" />
             <p className="text-xs text-slate-300">会自动移除空格/换行并转成大写，仅允许 A/T/C/G。</p>
             {warning && <p className="text-xs text-amber-300">{warning}</p>}
 
@@ -117,9 +117,9 @@ export function DNATranslatorPage() {
         <h2 className="text-lg font-semibold text-cyan-300">结果区</h2>
         <p className="mb-3 text-sm text-slate-300">显示清理后的序列、mRNA、密码子与翻译结果。</p>
         <div className="space-y-2 text-sm">
-          <p>清理后 DNA：<span className="text-cyan-200 break-all">{activeSequence || '-'}</span></p>
+          <p>清理后 DNA：<span className="block overflow-x-auto text-cyan-200 break-all">{activeSequence || '-'}</span></p>
           <p>当前模式：{mode === 'template' ? '模板链模式' : '编码链模式'}</p>
-          <p>mRNA：<span className="text-emerald-200 break-all">{activeResult.mrna || '-'}</span></p>
+          <p>mRNA：<span className="block overflow-x-auto text-emerald-200 break-all">{activeResult.mrna || '-'}</span></p>
           <p>氨基酸序列：{activeResult.aminoAcidSequence || '-'}</p>
           <p>序列长度：{activeSequence.length}；完整密码子：{activeResult.codons.length}；不完整尾部：{activeResult.remainder.length}</p>
           <p>起始密码子(AUG)：{activeResult.startCodonIndexes.length > 0 ? '存在' : '不存在'}；终止密码子(UAA/UAG/UGA)：{activeResult.stopCodonIndexes.length > 0 ? '存在' : '不存在'}</p>

@@ -124,9 +124,9 @@ export function HabitabilityPage() {
             ['stableEnergySource', '是否有稳定能量来源'],
             ['hasOrganics', '是否存在有机物'],
           ].map(([key, label]) => (
-            <label key={key} className="flex items-center justify-between gap-2 text-sm">
+            <label key={key} className="flex items-center justify-between gap-3 rounded-lg border border-slate-700/60 bg-slate-900/40 px-3 py-2 text-sm">
               <span>{label}</span>
-              <input type="checkbox" checked={input[key as keyof HabitabilityInput] as boolean} onChange={(e) => setInput((prev) => ({ ...prev, [key]: e.target.checked }))} />
+              <input className="h-5 w-5 accent-emerald-400" type="checkbox" checked={input[key as keyof HabitabilityInput] as boolean} onChange={(e) => setInput((prev) => ({ ...prev, [key]: e.target.checked }))} />
             </label>
           ))}
           <label className="space-y-1 text-sm">
@@ -186,7 +186,7 @@ export function HabitabilityPage() {
         <p className="text-sm">环境稳定性：{selectedWorld?.stability}</p>
         <p className="text-sm">宜居性评分：{result?.score}</p>
         <p className="text-sm">可能生命类型：{result?.possibleLifeType}</p>
-        <p className="text-sm">探测建议：{detectionAdvice.join('；')}</p>
+        <p className="text-sm break-words">探测建议：{detectionAdvice.join('；')}</p>
       </Card>
 
       <Card className="space-y-2">
